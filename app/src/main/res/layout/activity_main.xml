@@ -11,7 +11,7 @@
         android:id="@+id/textViewWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Peso:"
+        android:text="@string/weight_label"
         android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -21,7 +21,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:hint="Digite seu peso"
+        android:hint="@string/weight_hint"
+        android:autofillHints="weight"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewWeight"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -30,7 +31,7 @@
         android:id="@+id/textViewHeight"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Altura:"
+        android:text="@string/height_label"
         android:padding="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editWeight" />
@@ -40,7 +41,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:hint="Digite sua altura"
+        android:hint="@string/height_hint"
+        android:autofillHints="height"
+        tools:ignore="MissingConstraints"
+
         app:layout_constraintTop_toBottomOf="@id/textViewWeight"
         app:layout_constraintStart_toEndOf="@+id/textViewWeight"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -49,17 +53,18 @@
         android:id="@+id/imc"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Resultado:"
+        android:padding="16dp"
+        android:text="@string/imc_label"
         android:textAppearance="?attr/textAppearanceBodyLarge"
         android:textStyle="bold"
-        android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/editHeight" />
+        app:layout_constraintTop_toBottomOf="@id/editHeight"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/imcResult"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="0.0"
+        android:text="@string/_0_0"
         android:textAppearance="?attr/textAppearanceBodyLarge"
         android:textStyle="bold"
         android:padding="16dp"
@@ -70,7 +75,8 @@
         android:id="@+id/calculateButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Calcular"
+        android:text="@string/calcular"
+        app:layout_constraintLeft_toRightOf="@id/imcResult"
         app:layout_constraintTop_toBottomOf="@id/imcResult" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
